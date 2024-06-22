@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "length_of_putts_vs_score.html",
+    "href": "length_of_putts_vs_score.html",
+    "title": "",
+    "section": "",
+    "text": "In this part we figure out whether the difficulty of long range putts, mid range putts, or short range puts makes more of a difference to the score.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSlope of Mid Range Putts Graph:\n\n\n-0.005602726 \n\n\nSlope of Long Range Putts Graph:\n\n\n-0.004722437"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "sources.html",
+    "href": "sources.html",
+    "title": "Sources",
+    "section": "",
+    "text": "This is my one and only source\n\nhttps://datagolf.com/course-table"
+  },
+  {
+    "objectID": "specificshots_vs_totalscore.html",
+    "href": "specificshots_vs_totalscore.html",
+    "title": "",
+    "section": "",
+    "text": "In this part, we try to figure out which of driving accuracy, approach shots, shots around the green, or putting has the most impact on the score."
+  },
+  {
+    "objectID": "specificholes_vs_total_score.html",
+    "href": "specificholes_vs_total_score.html",
+    "title": "",
+    "section": "",
+    "text": "In this part, we analyze whether the average score on a par 3, par 4, or par 5 affects the score the most.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSlope of Par 3 Graph:\n\n\n17.1019 \n\n\nSlope of Par 4 Graph:\n\n\n17.22147 \n\n\nSlope of Par 5 Graph:\n\n\n9.600936 \n\n\nCalculating the slopes, we see that the par 4 score has the most effect on the total score. However, the difference between the effect the par 4s and par 3s have on the score is almost negligible."
+  }
+]

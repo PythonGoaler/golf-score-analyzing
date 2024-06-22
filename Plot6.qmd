@@ -1,0 +1,53 @@
+---
+title: ""
+format: html
+---
+In this part, we analyze whether the average score on a par 3, par 4, or par 5 affects the score the most.
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+library(tidyverse)
+library(patchwork)
+library(dplyr)
+library(ggpubr)
+golf_data <- read_csv(file = "dg_new_course_table.csv")
+```
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+p1 <- golf_data |> ggplot(mapping = aes(x = adj_par_3_score, y = adj_score_to_par)) +
+    geom_point() + 
+    geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 3 Score and Total Score", subtitle = "Clear Relation", x = "Par 3 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold"))  
+
+model <- lm(adj_score_to_par ~ adj_par_3_score, data = golf_data)
+slope <- coef(model)[2]
+
+p2 <- golf_data |> ggplot(mapping = aes(x = adj_par_4_score, y = adj_score_to_par)) + 
+    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 4 Score and Total Score", subtitle = "Clear Relation", x = "Par 4 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold")) 
+
+model2 <- lm(adj_score_to_par ~ adj_par_4_score, data = golf_data)
+slope2 <- coef(model2)[2]
+
+p3 <- golf_data |> ggplot(mapping = aes(x = adj_par_5_score, y = adj_score_to_par)) + 
+    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 5 Score and Total Score", subtitle = "Clear Relation", x = "Par 5 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold")) 
+
+
+model3 <- lm(adj_score_to_par ~ adj_par_5_score, data = golf_data)
+slope3 <- coef(model3)[2]
+
+
+#Consider horizontal boxplots all on the same graph to show relation
+p1
+p2
+p3
+cat("Slope of Par 3 Graph:\n")
+cat(slope, "\n")
+cat("Slope of Par 4 Graph:\n")
+cat(slope2, "\n")
+cat("Slope of Par 5 Graph:\n")
+cat(slope3, "\n")
+```
+
+Calculating the slopes, we see that the par 4 score has the most effect on the total score. However, the difference between the effect the par 4s and par 3s have on the score is almost negligible.

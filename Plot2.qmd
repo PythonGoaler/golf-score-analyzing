@@ -1,0 +1,26 @@
+---
+title: "Relation between average yardage of Par 3s and score"
+execute:
+  message: false
+  echo: false
+  warning: false
+---
+
+```{r}
+library(tidyverse)
+library(patchwork)
+golf_data <- read_csv(file = "dg_new_course_table.csv")
+#filtered_golf_data <- golf_data |> filter(yardage_3 >= 180)
+#original_x_range <- range(golf_data$yardage_3)
+#original_y_range <- range(golf_data$adj_score_to_par)
+
+
+```
+
+```{r}
+p1<- golf_data |> ggplot(mapping = aes(x = yardage_3, y = adj_score_to_par)) + geom_point() + labs(subtitle = "We see that Par 3s with yardage between 180 and 190 are the easiest on average.", x = "Par 3 Average Yardage", y = "Score") + geom_smooth(method = "loess", se = FALSE) + theme(plot.title = element_text(face = "bold")) 
+p1
+
+```
+
+

@@ -1,0 +1,20 @@
+---
+title: "Relation between Fairway Width and Score - note: not sure if this is a good graph to use."
+execute:
+  message: false
+  echo: false
+  warning: false
+---
+```{r}
+library(tidyverse)
+golf_data <- read_csv(file = "dg_new_course_table.csv")
+filtered_golf_data <- filter(golf_data, fw_width < 40)
+
+```
+
+```{r}
+golf_data |> ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + labs(subtitle = "Most of the data is between 30 and 40 yards.", x = "Fairway Width", y = "Score") + theme(plot.title = element_text(face = "bold")) 
+
+filtered_golf_data |> ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + geom_smooth(method = "loess", se = FALSE) + labs(subtitle = "However, once we zoom in, we see that there is a relation", x = "Fairway Width", y = "Score") + theme(plot.title = element_text(face = "bold")) 
+```
+

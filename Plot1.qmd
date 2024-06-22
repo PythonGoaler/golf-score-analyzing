@@ -1,0 +1,22 @@
+---
+title: "Relation between yardage of PGA course and score"
+author: ""
+format: html
+execute: 
+  message: false
+  warning: false
+  echo: false
+---
+
+```{r}
+library(tidyverse)
+
+golf_data <- read_csv(file = "dg_new_course_table.csv")
+```
+
+```{r}
+ golf_data |> ggplot(mapping = aes(x = yardage, y = adj_score_to_par)) + geom_point(alpha = .8) + geom_smooth(method = "loess", se = FALSE, color = "green") + labs(subtitle = "Only after the yardage crosses 7100 does it have an effect on the score.", x = "Yardage", y = "Average score to Par", caption = "Data from datagolf.com") + theme(plot.title = element_text(face = "bold")) 
+
+
+```
+

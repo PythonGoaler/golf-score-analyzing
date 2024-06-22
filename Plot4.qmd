@@ -1,0 +1,43 @@
+---
+title: ""
+format: html
+---
+In this part we figure out whether the difficulty of long range putts, mid range putts, or short range puts makes more of a difference to the score.
+
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+library(tidyverse)
+library(readr)
+library(patchwork)
+golf_data <- read_csv(file = "dg_new_course_table.csv")
+```
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+p1 <- golf_data |> ggplot(mapping = aes(x = less_5_ft_sg, y = adj_score_to_par)) + geom_point() + labs(title = "Relation between difficulty of short range putts and score", subtitle = "No relation is evident", x= "Difficulty of Short Range Putts (<5ft)", y = "Score") + theme(plot.title = element_text(face = "bold")) 
+
+p2 <- golf_data |> ggplot(mapping = aes(x = greater_5_less_15_sg, y = adj_score_to_par)) + 
+   geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between difficulty of mid range putts and score", x = "Difficulty of Mid Range Putts (Between 5 and 15 feet)", y = "Score") + theme(plot.title = element_text(face = "bold"))
+
+model2 <- lm(greater_5_less_15_sg ~ adj_score_to_par, data = golf_data)
+slope2 <- coef(model2)[2]
+
+p3 <- golf_data |> ggplot(mapping = aes(x = greater_15_sg, y = adj_score_to_par)) + 
+    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between difficulty of long range putts and score", x = "Difficulty of Long Range putts (>15ft)", y = "Score") + theme(plot.title = element_text(face ="bold"))
+
+model3 <- lm(greater_15_sg ~ adj_score_to_par, data = golf_data)
+slope3 <- coef(model3)[2]
+
+p1
+p2
+p3
+cat("Slope of Mid Range Putts Graph:\n")
+cat(slope2, "\n")
+cat("Slope of Long Range Putts Graph:\n")
+cat(slope3, "\n")
+
+#Bar Graph Maybe
+```
