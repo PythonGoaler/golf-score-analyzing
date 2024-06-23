@@ -2,7 +2,8 @@
 title: ""
 format: html
 ---
-In this part, we analyze whether the average score on a par 3, par 4, or par 5 affects the score the most.
+#### In this part, we analyze whether the average score on a par 3, par 4, or par 5 affects the score the most.
+<br>
 ```{r}
 #| echo: FALSE
 #| message: FALSE
@@ -37,17 +38,21 @@ p3 <- golf_data |> ggplot(mapping = aes(x = adj_par_5_score, y = adj_score_to_pa
 model3 <- lm(adj_score_to_par ~ adj_par_5_score, data = golf_data)
 slope3 <- coef(model3)[2]
 
+combined_plot <- ggplot() + 
+  geom_point(data = golf_data, aes(x = adj_par_3_score, y = adj_score_to_par, color = "Par 3"), alpha = 0.35) + 
+  geom_smooth(data = golf_data, aes(x = adj_par_3_score, y = adj_score_to_par, color = "Par 3"), method = "lm", se = FALSE) +
+  geom_point(data = golf_data, aes(x = adj_par_4_score, y = adj_score_to_par, color = "Par 4"), alpha = 0.35) + 
+  geom_smooth(data = golf_data, aes(x = adj_par_4_score, y = adj_score_to_par, color = "Par 4"), method = "lm", se = FALSE) + 
+  geom_point(data = golf_data, aes(x = adj_par_5_score, y = adj_score_to_par, color = "Par 5"), alpha = 0.35) + 
+  geom_smooth(data = golf_data, aes(x = adj_par_5_score, y = adj_score_to_par, color = "Par 5"), method = "lm", se = FALSE) + 
+  labs(title = "Relation between diffficulty of different holes and score", x = "Hole Difficulty", y = "Score", color = "Strokes Gained") + 
+  theme(plot.title = element_text(face = "bold")) +
+  scale_color_manual(values = c("Par 3" = "blue", "Par 4" = "red", "Par 5" = "green"))
 
-#Consider horizontal boxplots all on the same graph to show relation
 p1
 p2
 p3
-cat("Slope of Par 3 Graph:\n")
-cat(slope, "\n")
-cat("Slope of Par 4 Graph:\n")
-cat(slope2, "\n")
-cat("Slope of Par 5 Graph:\n")
-cat(slope3, "\n")
+combined_plot
 ```
 
 Calculating the slopes, we see that the par 4 score has the most effect on the total score. However, the difference between the effect the par 4s and par 3s have on the score is almost negligible.

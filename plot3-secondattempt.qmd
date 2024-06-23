@@ -1,0 +1,26 @@
+---
+title: ""
+execute:
+  echo: FALSE
+  message: FALSE
+  warning: FALSE
+---
+## Relation between driving distance and score
+```{r}
+library(tidyverse)
+golf_data <- read_csv("dg_new_course_table.csv")
+```
+
+```{r}
+golf_data |> ggplot(aes(x = adj_driving_distance, y = adj_score_to_par)) + geom_point() +
+  geom_smooth(method = "loess", se = FALSE) + labs(x = "Driving Distance", y = "Score")
+```
+
+#### There is not much of a correlation, which seems suprising, but makes sense when we look at the relation between accuracy and distance.
+
+```{r}
+golf_data |> ggplot(aes(x = adj_driving_distance, y = adj_driving_accuracy)) + geom_point() +
+  geom_smooth(method = "loess", se = FALSE) + labs(x = "Driving Distance", y = "Driving Accuracy")
+```
+
+#### We see that the accuracy goes down when the driving distance increases, which is why driving distance is not a huge factor towards the

@@ -11,14 +11,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site"
+    "text": "Hi! My name is Zephan Shivam, and I’m a middle schooler from Austin, Texas.\nYou can see this project and much more at my github, https://github.com/PythonGoaler. If you want to contact me directly, you can contact me at my email, fearlessfan03 at gmail dot com.\nI made this project because I’m passionate about golf and I wanted to explore what affects the score the most. If you want to see details, here is my github repo - https://github.com/PythonGoaler/golf-score-analyzing\nThis project was created as a part of Kane’s Data Sciece Bootcamp - https://bootcamp.davidkane.info/."
   },
   {
     "objectID": "sources.html",
     "href": "sources.html",
     "title": "Sources",
     "section": "",
-    "text": "This is my one and only source\n\nhttps://datagolf.com/course-table"
+    "text": "These are my sources\n\nhttps://datagolf.com/course-table\nChat GPT"
   },
   {
     "objectID": "specificshots_vs_totalscore.html",
@@ -33,5 +33,61 @@
     "title": "",
     "section": "",
     "text": "In this part, we analyze whether the average score on a par 3, par 4, or par 5 affects the score the most.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSlope of Par 3 Graph:\n\n\n17.1019 \n\n\nSlope of Par 4 Graph:\n\n\n17.22147 \n\n\nSlope of Par 5 Graph:\n\n\n9.600936 \n\n\nCalculating the slopes, we see that the par 4 score has the most effect on the total score. However, the difference between the effect the par 4s and par 3s have on the score is almost negligible."
+  },
+  {
+    "objectID": "Plot6.html",
+    "href": "Plot6.html",
+    "title": "",
+    "section": "",
+    "text": "In this part, we analyze whether the average score on a par 3, par 4, or par 5 affects the score the most.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCalculating the slopes, we see that the par 4 score has the most effect on the total score. However, the difference between the effect the par 4s and par 3s have on the score is almost negligible."
+  },
+  {
+    "objectID": "Plot4.html",
+    "href": "Plot4.html",
+    "title": "",
+    "section": "",
+    "text": "In this part we figure out whether the difficulty of long range putts, mid range putts, or short range puts makes more of a difference to the score.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSlope of Mid Range Putts Graph:\n\n\n-0.005602726 \n\n\nSlope of Long Range Putts Graph:\n\n\n-0.004722437"
+  },
+  {
+    "objectID": "Plot3.html",
+    "href": "Plot3.html",
+    "title": "",
+    "section": "",
+    "text": "In this part, we try to figure out which of driving, approach shots, shots around the green, or putting has the most impact on the score."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Analyzing PGA Data",
+    "section": "",
+    "text": "This project analyzes PGA data. It looks at many different variables around the course and sees whether they have an effect on the score. This project compares this effect to the effect of other similar variables, to extract interesting, intruiging data about golf.\n \n\n\nHere’s one such comparison"
+  },
+  {
+    "objectID": "index.html#heres-one-such-comparison.-this-graph-compares-yardage-and-score.",
+    "href": "index.html#heres-one-such-comparison.-this-graph-compares-yardage-and-score.",
+    "title": "Analyzing PGA Data",
+    "section": "Here’s one such comparison. This graph compares yardage and score.",
+    "text": "Here’s one such comparison. This graph compares yardage and score."
+  },
+  {
+    "objectID": "Plot5.html",
+    "href": "Plot5.html",
+    "title": "",
+    "section": "",
+    "text": "library(tidyverse) library(patchwork) golf_data &lt;- read_csv(“dg_new_course_table.csv”) filtered_golf_data &lt;- filter(golf_data, fw_width &lt; 40)\np1 &lt;- golf_data %&gt;% ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + labs(x = “Fairway Width”, y = “Score”) + theme(plot.title = element_text(face = “bold”)) + annotate(“label”, x = 30, y = 3.5, label = “Most of the data is here”, color = “black”, size = 3, arrow = arrow(length = unit(0.5, “cm”)))\np2 &lt;- filtered_golf_data %&gt;% ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + geom_smooth(method = “loess”, se = FALSE) + labs(x = “Fairway Width”, y = ““) + theme(plot.title = element_text(face =”bold”))\np1 + p2"
+  },
+  {
+    "objectID": "Plot5.html#relation-between-fairway-width-and-score",
+    "href": "Plot5.html#relation-between-fairway-width-and-score",
+    "title": "",
+    "section": "",
+    "text": "library(tidyverse) library(patchwork) golf_data &lt;- read_csv(“dg_new_course_table.csv”) filtered_golf_data &lt;- filter(golf_data, fw_width &lt; 40)\np1 &lt;- golf_data %&gt;% ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + labs(x = “Fairway Width”, y = “Score”) + theme(plot.title = element_text(face = “bold”)) + annotate(“label”, x = 30, y = 3.5, label = “Most of the data is here”, color = “black”, size = 3, arrow = arrow(length = unit(0.5, “cm”)))\np2 &lt;- filtered_golf_data %&gt;% ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + geom_smooth(method = “loess”, se = FALSE) + labs(x = “Fairway Width”, y = ““) + theme(plot.title = element_text(face =”bold”))\np1 + p2"
+  },
+  {
+    "objectID": "plot3-secondattempt.html",
+    "href": "plot3-secondattempt.html",
+    "title": "",
+    "section": "",
+    "text": "Relation between driving distance and score\n\n\n\n\n\n\n\n\n\n\nThere is not much of a correlation, which seems suprising, but makes sense when we look at the relation between accuracy and distance.\n\n\n\n\n\n\n\n\n\n\n\nWe see that the accuracy goes down when the driving distance increases, which is why driving distance is not a huge factor towards the"
   }
 ]

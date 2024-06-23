@@ -1,6 +1,7 @@
 ---
 title: "Sources"
 ---
-This is my one and only source 
+These are my sources
 
 - https://datagolf.com/course-table
+- Chat GPT

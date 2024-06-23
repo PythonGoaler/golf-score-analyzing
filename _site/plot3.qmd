@@ -9,8 +9,6 @@ execute:
 
 #### In this part, we try to figure out which of driving, approach shots, shots around the green, or putting has the most impact on the score. 
 
-<br>
-<br>
 
 
 ```{r}

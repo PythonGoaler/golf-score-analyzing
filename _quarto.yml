@@ -6,20 +6,16 @@ website:
   navbar:
     left:
       - href: index.qmd
-        text: Description
-      - href: project-part-1.qmd
+        text: Home
+      - href: plot3-secondattempt.qmd
         text: Plot 1
-      - href: lengthvsscore.qmd
+      - href: Plot6.qmd
         text: Plot 2
-      - href: specificshots_vs_totalscore.qmd
+      - href: Plot3.qmd
         text: Plot 3
-      - href: length_of_putts_vs_score.qmd
-        text: Plot 4
-      - href: width_fairway_score_relation.qmd
-        text: Plot 5
-      - href: specificholes_vs_total_score.qmd
-        text: Plot 6
     right:
+      - href: about.qmd
+        text: About
       - href: sources.qmd
         text: Sources
 format:

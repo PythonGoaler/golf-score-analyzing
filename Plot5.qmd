@@ -1,20 +1,44 @@
 ---
-title: "Relation between Fairway Width and Score - note: not sure if this is a good graph to use."
 execute:
   message: false
   echo: false
   warning: false
 ---
+## Relation between driving distance and score
+
+<br>
+<br>
 ```{r}
 library(tidyverse)
+library(patchwork)
 golf_data <- read_csv(file = "dg_new_course_table.csv")
 filtered_golf_data <- filter(golf_data, fw_width < 40)
 
 ```
 
 ```{r}
-golf_data |> ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + labs(subtitle = "Most of the data is between 30 and 40 yards.", x = "Fairway Width", y = "Score") + theme(plot.title = element_text(face = "bold")) 
+p1 <- golf_data %>%
+  ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + 
+  geom_point() + 
+  labs(x = "Fairway Width", y = "Score") + 
+  theme(plot.title = element_text(face = "bold")) +
+   geom_rect(aes(xmin = 10, xmax = 50, ymin = 2.5, ymax = 4.5),
+            fill = "white", color = "red", size = 1, linetype = "solid") + 
+  annotate("text", x = 30, y = 3.5, 
+           label = "Most of the data is between 30-40 yards", 
+           color = "black", size = 5,
+           arrow = arrow(length = unit(0.5, "cm"))) 
 
-filtered_golf_data |> ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + geom_point() + geom_smooth(method = "loess", se = FALSE) + labs(subtitle = "However, once we zoom in, we see that there is a relation", x = "Fairway Width", y = "Score") + theme(plot.title = element_text(face = "bold")) 
+
+# Create plot p2
+p2 <- filtered_golf_data %>%
+  ggplot(mapping = aes(x = fw_width, y = adj_score_to_par)) + 
+  geom_point() + 
+  geom_smooth(method = "loess", se = FALSE) + 
+  labs(title = "So, to understand the data properly, we zoom in, and we see a pattern.", x = "Fairway Width", y = "") + 
+  theme(plot.title = element_text(face = "bold"))
+# Display both plots side by side
+p1
+p2
 ```
 

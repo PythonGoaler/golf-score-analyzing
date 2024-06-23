@@ -1,4 +1,31 @@
 ---
 title: "Analyzing PGA Data"
-subtitle: This project analyzes different variables and their effect on the score.
+execute:
+  echo: false
+  message: false
+  warning: false
+
 ---
+
+#### This project analyzes PGA data. It looks at many different variables around the course and sees whether they have an effect on the score. This project compares this effect to the effect of other similar variables, to extract interesting, intruiging data about golf.
+
+<br>
+<br>
+
+### Here's one such comparison
+
+
+
+<br>
+
+
+
+```{r}
+library(tidyverse)
+
+golf_data <- read_csv(file = "dg_new_course_table.csv")
+```
+
+```{r}
+ golf_data |> ggplot(mapping = aes(x = yardage, y = adj_score_to_par)) + geom_point(alpha = 0.8) + geom_smooth(method = "loess", se = FALSE, color = "green") + labs(title = "Yardage vs Score", subtitle = "Only after the yardage crosses 7100 does it have an effect on the score.", x = "Yardage", y = "Average score to Par", caption = "Data from datagolf.com") + theme(plot.title = element_text(face = "bold")) 
+```

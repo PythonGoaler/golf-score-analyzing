@@ -2,9 +2,9 @@
 title: ""
 format: html
 ---
-In this part we figure out whether the difficulty of long range putts, mid range putts, or short range puts makes more of a difference to the score.
+#### In this part we figure out whether the difficulty of long range putts, mid range putts, or short range puts makes more of a difference to the score.
 
-
+<br>
 ```{r}
 #| echo: FALSE
 #| message: FALSE
