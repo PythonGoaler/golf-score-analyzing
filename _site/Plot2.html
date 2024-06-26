@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Relation between average yardage of Par 3s and score</title>
+<title>What affects golf score the most? - Relation between average yardage of Par 3s and score</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href=".//favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -77,6 +78,11 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">What affects golf score the most?</span>
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -87,22 +93,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Plot3.html"> 
-<span class="menu-text">Plot 1</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-plots" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Plots</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-plots">    
+        <li>
+    <a class="dropdown-item" href="./Plot6.html">
+ <span class="dropdown-text">Difficulty of each type of hole versus score</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Plot4.html"> 
-<span class="menu-text">Plot</span></a>
+        <li>
+    <a class="dropdown-item" href="./plot3-secondattempt.html">
+ <span class="dropdown-text">Driving Distance versus score</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Plot5.html"> 
-<span class="menu-text">Plot 3</span></a>
+        <li>
+    <a class="dropdown-item" href="./plot3.html">
+ <span class="dropdown-text">Yardage of course versus score</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Plot6.html"> 
-<span class="menu-text">Plot 4</span></a>
-  </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -243,7 +252,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/zshi\.quarto\.pub\/what-affects-the-golf-score-the-most");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

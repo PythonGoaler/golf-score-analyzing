@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>About</title>
+<title>What affects golf score the most? - About</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href=".//favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -77,6 +78,11 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">What affects golf score the most?</span>
+    </a>
+  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -87,18 +93,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./plot3-secondattempt.html"> 
-<span class="menu-text">Plot 1</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-plots" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Plots</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-plots">    
+        <li>
+    <a class="dropdown-item" href="./Plot6.html">
+ <span class="dropdown-text">Difficulty of each type of hole versus score</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Plot6.html"> 
-<span class="menu-text">Plot 2</span></a>
+        <li>
+    <a class="dropdown-item" href="./plot3-secondattempt.html">
+ <span class="dropdown-text">Driving Distance versus score</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./Plot3.html"> 
-<span class="menu-text">Plot 3</span></a>
+        <li>
+    <a class="dropdown-item" href="./plot3.html">
+ <span class="dropdown-text">Yardage of course versus score</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -146,7 +159,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Hi! My name is Zephan Shivam, and I’m a middle schooler from Austin, Texas.</p>
-<p>You can see this project and much more at my github, <a href="https://github.com/PythonGoaler" class="uri">https://github.com/PythonGoaler</a>. If you want to contact me directly, you can contact me at my email, fearlessfan03 at gmail dot com.</p>
+<p>You can see this project and much more at my github, <a href="https://github.com/PythonGoaler" class="uri">https://github.com/PythonGoaler</a>. If you want to contact me directly, you can contact me at my email, fearlessfan03 @ gmail dot com.</p>
 <p>I made this project because I’m passionate about golf and I wanted to explore what affects the score the most. If you want to see details, here is my github repo - <a href="https://github.com/PythonGoaler/golf-score-analyzing" class="uri">https://github.com/PythonGoaler/golf-score-analyzing</a></p>
 <p>This project was created as a part of Kane’s Data Sciece Bootcamp - <a href="https://bootcamp.davidkane.info/" class="uri">https://bootcamp.davidkane.info/</a>.</p>
 
@@ -234,7 +247,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/zshi\.quarto\.pub\/what-affects-the-golf-score-the-most");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
