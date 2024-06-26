@@ -5,7 +5,7 @@ title: "About"
 Hi! My name is Zephan Shivam, and I'm a middle schooler from Austin, Texas.
 
 You can see this project and much more at my github,  <https://github.com/PythonGoaler>. 
-If you want to contact me directly, you can contact me at my email, fearlessfan03 at gmail dot com.
+If you want to contact me directly, you can contact me at my email, fearlessfan03 @ gmail dot com.
 
 I made this project because I'm passionate about golf and I wanted to explore what affects the score the most. If you want to see details, here is my github repo - <https://github.com/PythonGoaler/golf-score-analyzing>
 

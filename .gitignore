@@ -7,3 +7,5 @@
 *Rproj
 /.DS_Store
 *_files/
+*_publish.yml
+*_site/

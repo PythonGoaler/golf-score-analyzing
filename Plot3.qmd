@@ -1,57 +1,21 @@
 ---
 title: ""
-format: html
+
 execute:
-  echo: FALSE
-  message: FALSE
-  warning: FALSE
+  echo: false
+  message: false
+  warning: false
 ---
 
-#### In this part, we try to figure out which of driving, approach shots, shots around the green, or putting has the most impact on the score. 
-
-<br>
-<br>
-
+## Yardage of course versus score
 
 ```{r}
-#| echo: FALSE
-#| message: FALSE
 library(tidyverse)
-library(patchwork)
+#Reading the data
 golf_data <- read_csv(file = "dg_new_course_table.csv")
 ```
 
 ```{r}
-#| echo: FALSE
-#| message: FALSE
-p1 <- golf_data |> ggplot(mapping = aes(x = ott_sg, y = adj_score_to_par)) + 
-    geom_point() + geom_smooth(method = "lm", se = FALSE)   + labs(title = "Relation between shots off the tee (drives) and score", x= "Strokes gained off the tee (Driving)", y = "Score") + theme(plot.title = element_text(face = "bold")) 
-p2 <- golf_data |> ggplot(mapping = aes(x = app_sg, y = adj_score_to_par)) + 
-   geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between approach shots and score", x = "Strokes gained on the approach shot", y = "Score") +     
-  theme(plot.title = element_text(face = "bold"))
-p3 <- golf_data |> ggplot(mapping = aes(x = arg_sg, y = adj_score_to_par)) + 
-    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between shots around the green and score", x = "Strokes gained around the green (short game)", y = "Score") + theme(plot.title = element_text(face = "bold")) 
-p4 <- golf_data |> ggplot(mapping = aes(x = putt_sg, y = adj_score_to_par)) + 
-    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between putting and score", x = "Strokes Gained Putting", y = "Score") + theme(plot.title = element_text(face = "bold")) 
-combined_plot <- ggplot() + 
-  geom_point(data = golf_data, aes(x = ott_sg, y = adj_score_to_par, color = "Off the Tee"), alpha = 0.35) + 
-  geom_smooth(data = golf_data, aes(x = ott_sg, y = adj_score_to_par, color = "Off the Tee"), method = "lm", se = FALSE) +
-  geom_point(data = golf_data, aes(x = app_sg, y = adj_score_to_par, color = "Approach Shots"), alpha = 0.35) + 
-  geom_smooth(data = golf_data, aes(x = app_sg, y = adj_score_to_par, color = "Approach Shots"), method = "lm", se = FALSE) + 
-  geom_point(data = golf_data, aes(x = arg_sg, y = adj_score_to_par, color = "Around the Green"), alpha = 0.35) + 
-  geom_smooth(data = golf_data, aes(x = arg_sg, y = adj_score_to_par, color = "Around the Green"), method = "lm", se = FALSE) + 
-  geom_point(data = golf_data, aes(x = putt_sg, y = adj_score_to_par, color = "Putting"), alpha = 0.35) + 
-  geom_smooth(data = golf_data, aes(x = putt_sg, y = adj_score_to_par, color = "Putting"), method = "lm", se = FALSE) + 
-  labs(title = "Relation between different strokes and score", x = "Strokes Gained", y = "Score", color = "Strokes Gained") + 
-  theme(plot.title = element_text(face = "bold")) +
-  scale_color_manual(values = c("Off the Tee" = "blue", "Approach Shots" = "red", "Around the Green" = "green", "Putting" = "purple"))
-
-
-p1
-p2
-p3
-p4
-combined_plot
-#Use beeswarm graph for better relation must download...
-# Short description of how I got the graphs together.
+#Plotting the data
+ golf_data |> ggplot(mapping = aes(x = yardage, y = adj_score_to_par)) + geom_point(alpha = 0.8) + geom_smooth(method = "loess", se = FALSE, color = "green") + labs(subtitle = "Only after the yardage crosses 7100 does it have an effect on the score.", x = "Yardage", y = "Average score to Par", caption = "Data from datagolf.com") + theme(plot.title = element_text(face = "bold")) 
 ```

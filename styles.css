@@ -1,1 +1,23 @@
 /* css styles */
+.navbar {
+  background-color: blue;
+  
+}
+
+.navbar .navbar-nav .nav-link {
+    color: turquoise; /* Link text color */
+    font-size: 20px;
+    margin-left: 10px;
+}
+.navbar-title {
+    color: turquoise; /* Black color */
+    font-size: 30px;
+}
+
+body {
+  background-color: ghostwhite;
+}
+h4 {
+    line-height: 1.6;
+  
+}

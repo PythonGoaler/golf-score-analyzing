@@ -2,7 +2,7 @@
 title: ""
 format: html
 ---
-#### In this part, we analyze whether the average score on a par 3, par 4, or par 5 affects the score the most.
+## Difficulty of each type of hole versus score
 <br>
 ```{r}
 #| echo: FALSE
@@ -55,4 +55,3 @@ p3
 combined_plot
 ```
 
-Calculating the slopes, we see that the par 4 score has the most effect on the total score. However, the difference between the effect the par 4s and par 3s have on the score is almost negligible.

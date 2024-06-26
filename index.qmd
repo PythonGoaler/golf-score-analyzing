@@ -1,31 +1,48 @@
 ---
-title: "Analyzing PGA Data"
+title: ""
+format: 
+  html:
+    css: styles.css
 execute:
-  echo: false
-  message: false
-  warning: false
-
+  echo: FALSE
+  message: FALSE
+  warning: FALSE
 ---
-
-#### This project analyzes PGA data. It looks at many different variables around the course and sees whether they have an effect on the score. This project compares this effect to the effect of other similar variables, to extract interesting, intruiging data about golf.
-
-<br>
-<br>
-
-### Here's one such comparison
-
-
+# What affects golf score the most?
+#### By Zephan Shivam
 
 <br>
-
 
 
 ```{r}
+#| echo: FALSE
+#| message: FALSE
 library(tidyverse)
-
-golf_data <- read_csv(file = "dg_new_course_table.csv")
+library(patchwork)
+golf_data <- read_csv(file = "dg_new_course_table.csv") #Reading the data
 ```
 
 ```{r}
- golf_data |> ggplot(mapping = aes(x = yardage, y = adj_score_to_par)) + geom_point(alpha = 0.8) + geom_smooth(method = "loess", se = FALSE, color = "green") + labs(title = "Yardage vs Score", subtitle = "Only after the yardage crosses 7100 does it have an effect on the score.", x = "Yardage", y = "Average score to Par", caption = "Data from datagolf.com") + theme(plot.title = element_text(face = "bold")) 
+#| echo: FALSE
+#| message: FALSE
+#| fig.width: 8
+#| fig.height: 5
+
+
+#Plotting the combined graph
+ggplot() + 
+  geom_point(data = golf_data, aes(x = ott_sg, y = adj_score_to_par, color = "Off the Tee"), alpha = 0.35) + 
+  geom_smooth(data = golf_data, aes(x = ott_sg, y = adj_score_to_par, color = "Off the Tee"), method = "lm", se = FALSE) +
+  geom_point(data = golf_data, aes(x = app_sg, y = adj_score_to_par, color = "Approach Shots"), alpha = 0.35) + 
+  geom_smooth(data = golf_data, aes(x = app_sg, y = adj_score_to_par, color = "Approach Shots"), method = "lm", se = FALSE) + 
+  geom_point(data = golf_data, aes(x = arg_sg, y = adj_score_to_par, color = "Around the Green"), alpha = 0.35) + 
+  geom_smooth(data = golf_data, aes(x = arg_sg, y = adj_score_to_par, color = "Around the Green"), method = "lm", se = FALSE) + 
+  geom_point(data = golf_data, aes(x = putt_sg, y = adj_score_to_par, color = "Putting"), alpha = 0.35) + 
+  geom_smooth(data = golf_data, aes(x = putt_sg, y = adj_score_to_par, color = "Putting"), method = "lm", se = FALSE) + 
+  labs(title = "Relation between different strokes and score", x = "Strokes Gained", y = "Score", color = "Strokes Gained") + 
+  theme(plot.title = element_text(face = "bold")) +
+  scale_color_manual(values = c("Off the Tee" = "blue", "Approach Shots" = "red", "Around the Green" = "green", "Putting" = "purple"))
+
 ```
+
+#### Did you know that golfers only make birdies, on average, 15-25% of the time? Because of this difficulty, it is important to know what makes the most difference on the score. This project does just that, looking at many different variables and sees whether they have an effect on the score. In this project, we see that good putting on Par 3s and Par 4s seem to make the most difference on the score.

@@ -2,27 +2,28 @@ project:
   type: website
 
 website:
-  title: ""
+  title: "What affects golf score the most?"
+  favicon: /favicon.ico
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - href: plot3-secondattempt.qmd
-        text: Plot 1
-      - href: Plot6.qmd
-        text: Plot 2
-      - href: Plot3.qmd
-        text: Plot 3
+      - text: Plots
+        menu:
+          - href: Plot6.qmd
+            text: "Difficulty of each type of hole versus score"
+          - href: plot3-secondattempt.qmd
+            text: "Driving Distance versus score"
+          - href: plot3.qmd
+            text: "Yardage of course versus score"
     right:
       - href: about.qmd
         text: About
       - href: sources.qmd
         text: Sources
+
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
-
-

@@ -3,5 +3,6 @@ title: "Sources"
 ---
 These are my sources
 
-- https://datagolf.com/course-table
+- <https://datagolf.com/course-table>
 - Chat GPT
+- <https://favicon.io/favicon-converter/>
