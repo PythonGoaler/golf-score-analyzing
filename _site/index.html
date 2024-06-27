@@ -153,6 +153,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="by-zephan-shivam" class="level4">
 <h4 class="anchored" data-anchor-id="by-zephan-shivam">By Zephan Shivam</h4>
 <p><br></p>
+<div class="plot-container">
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -162,9 +163,10 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+</div>
 </section>
-<section id="did-you-know-that-golfers-only-make-birdies-on-average-15-25-of-the-time-because-of-this-difficulty-it-is-important-to-know-what-makes-the-most-difference-on-the-score.-this-project-does-just-that-looking-at-many-different-variables-and-sees-whether-they-have-an-effect-on-the-score.-in-this-project-we-see-that-good-putting-on-par-3s-and-par-4s-seem-to-make-the-most-difference-on-the-score." class="level4">
-<h4 class="anchored" data-anchor-id="did-you-know-that-golfers-only-make-birdies-on-average-15-25-of-the-time-because-of-this-difficulty-it-is-important-to-know-what-makes-the-most-difference-on-the-score.-this-project-does-just-that-looking-at-many-different-variables-and-sees-whether-they-have-an-effect-on-the-score.-in-this-project-we-see-that-good-putting-on-par-3s-and-par-4s-seem-to-make-the-most-difference-on-the-score.">Did you know that golfers only make birdies, on average, 15-25% of the time? Because of this difficulty, it is important to know what makes the most difference on the score. This project does just that, looking at many different variables and sees whether they have an effect on the score. In this project, we see that good putting on Par 3s and Par 4s seem to make the most difference on the score.</h4>
+<section id="have-you-ever-watched-golf-and-wondered-sure-many-things-affect-the-score-but-what-affects-it-the-most-i-sure-have-wondered-that.-so-i-created-this-project-to-answer-that-question.-it-takes-data-from-datagolf.com-where-all-data-is-golf-related-and-analyzes-what-has-the-most-effect-on-the-score.-in-this-project-we-see-that-good-putting-on-par-3s-and-par-4s-seem-to-make-the-most-difference-on-the-score." class="level4">
+<h4 class="anchored" data-anchor-id="have-you-ever-watched-golf-and-wondered-sure-many-things-affect-the-score-but-what-affects-it-the-most-i-sure-have-wondered-that.-so-i-created-this-project-to-answer-that-question.-it-takes-data-from-datagolf.com-where-all-data-is-golf-related-and-analyzes-what-has-the-most-effect-on-the-score.-in-this-project-we-see-that-good-putting-on-par-3s-and-par-4s-seem-to-make-the-most-difference-on-the-score.">Have you ever watched golf and wondered, “Sure, many things affect the score, but what affects it the most?” I sure have wondered that. So I created this project to answer that question. It takes data from datagolf.com, where all data is golf related, and analyzes what has the most effect on the score. In this project, we see that good putting on Par 3s and Par 4s seem to make the most difference on the score.</h4>
 
 
 </section>
@@ -252,7 +254,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/zshi\.quarto\.pub\/what-affects-the-golf-score-the-most");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

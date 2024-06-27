@@ -20,19 +20,19 @@ golf_data <- read_csv(file = "dg_new_course_table.csv")
 #| message: FALSE
 p1 <- golf_data |> ggplot(mapping = aes(x = adj_par_3_score, y = adj_score_to_par)) +
     geom_point() + 
-    geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 3 Score and Total Score", subtitle = "Clear Relation", x = "Par 3 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold"))  
+    geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 3 Score and Total Score", subtitle = "Clear Relation", x = "Par 3 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold")) + theme_minimal() + theme(plot.title = element_text(face = "bold")) 
 
 model <- lm(adj_score_to_par ~ adj_par_3_score, data = golf_data)
 slope <- coef(model)[2]
 
 p2 <- golf_data |> ggplot(mapping = aes(x = adj_par_4_score, y = adj_score_to_par)) + 
-    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 4 Score and Total Score", subtitle = "Clear Relation", x = "Par 4 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold")) 
+    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 4 Score and Total Score", subtitle = "Clear Relation", x = "Par 4 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold")) + theme_minimal() + theme(plot.title = element_text(face = "bold"))
 
 model2 <- lm(adj_score_to_par ~ adj_par_4_score, data = golf_data)
 slope2 <- coef(model2)[2]
 
 p3 <- golf_data |> ggplot(mapping = aes(x = adj_par_5_score, y = adj_score_to_par)) + 
-    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 5 Score and Total Score", subtitle = "Clear Relation", x = "Par 5 Score", y = "Total Score") + theme(plot.title = element_text(face = "bold")) 
+    geom_point() + geom_smooth(method = "lm", se = FALSE) + labs(title = "Relation between Par 5 Score and Total Score", subtitle = "Clear Relation", x = "Par 5 Score", y = "Total Score") +  theme_minimal() + theme(plot.title = element_text(face = "bold"))
 
 
 model3 <- lm(adj_score_to_par ~ adj_par_5_score, data = golf_data)
@@ -47,11 +47,51 @@ combined_plot <- ggplot() +
   geom_smooth(data = golf_data, aes(x = adj_par_5_score, y = adj_score_to_par, color = "Par 5"), method = "lm", se = FALSE) + 
   labs(title = "Relation between diffficulty of different holes and score", x = "Hole Difficulty", y = "Score", color = "Strokes Gained") + 
   theme(plot.title = element_text(face = "bold")) +
-  scale_color_manual(values = c("Par 3" = "blue", "Par 4" = "red", "Par 5" = "green"))
+  scale_color_manual(values = c("Par 3" = "blue", "Par 4" = "red", "Par 5" = "green")) + theme_minimal() + theme(plot.title = element_text(face = "bold"))
 
-p1
-p2
-p3
-combined_plot
 ```
 
+<div class="plot-container">
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.width: 8
+#| fig.height: 5
+p1
+```
+</div>
+
+<div class="plot-container">
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.width: 8
+#| fig.height: 5
+p2
+```
+</div>
+
+<div class="plot-container">
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.width: 8
+#| fig.height: 5
+p3
+```
+</div>
+
+<div class="plot-container">
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.width: 8
+#| fig.height: 5
+combined_plot
+```
+</div>

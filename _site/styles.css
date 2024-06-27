@@ -1,16 +1,16 @@
-/* css styles */
+/* css styles 
 .navbar {
   background-color: blue;
   
 }
 
 .navbar .navbar-nav .nav-link {
-    color: turquoise; /* Link text color */
+    color: turquoise;  Link text color
     font-size: 20px;
     margin-left: 10px;
 }
 .navbar-title {
-    color: turquoise; /* Black color */
+    color: turquoise;  Black color
     font-size: 30px;
 }
 
@@ -18,6 +18,96 @@ body {
   background-color: ghostwhite;
 }
 h4 {
-    line-height: 1.6;
-  
+    line-height: 1.6; */
+    
+/* Navbar styling */
+.navbar {
+  background-color: blue;
 }
+
+.navbar .navbar-nav .nav-link {
+  color: turquoise; /* Link text color */
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.navbar-title {
+  color: turquoise;
+  font-size: 30px;
+}
+
+/* Body styling */
+body {
+  background-color: ghostwhite;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px;
+}
+
+/* Heading styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Georgia', serif;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 36px;
+  color: darkblue;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 30px;
+  color: darkblue;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 24px;
+  color: darkblue;
+}
+
+h4 {
+  line-height: 1.6;
+  font-size: 20px;
+  color: darkblue;
+}
+
+/* Paragraph styling */
+p {
+  margin: 10px 0;
+}
+
+/* Link styling */
+a {
+  color: darkblue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Code block styling */
+
+.plot-container {
+  background-color: transparent; /* Ensure plot containers have transparent background */
+  margin-top: 20px;
+  border: 1px solid midnightblue;
+  border-radius: 5px;
+  padding-top: 20px;
+  padding-left: 15px; /* Equal padding on all sides */
+  overflow: hidden; /* Ensure no overflow */
+}
+
+.plot-container svg {
+  margin: 0;
+}
+
+
+
+  

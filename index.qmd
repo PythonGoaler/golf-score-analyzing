@@ -22,6 +22,7 @@ library(patchwork)
 golf_data <- read_csv(file = "dg_new_course_table.csv") #Reading the data
 ```
 
+<div class="plot-container">
 ```{r}
 #| echo: FALSE
 #| message: FALSE
@@ -39,10 +40,9 @@ ggplot() +
   geom_smooth(data = golf_data, aes(x = arg_sg, y = adj_score_to_par, color = "Around the Green"), method = "lm", se = FALSE) + 
   geom_point(data = golf_data, aes(x = putt_sg, y = adj_score_to_par, color = "Putting"), alpha = 0.35) + 
   geom_smooth(data = golf_data, aes(x = putt_sg, y = adj_score_to_par, color = "Putting"), method = "lm", se = FALSE) + 
-  labs(title = "Relation between different strokes and score", x = "Strokes Gained", y = "Score", color = "Strokes Gained") + 
-  theme(plot.title = element_text(face = "bold")) +
-  scale_color_manual(values = c("Off the Tee" = "blue", "Approach Shots" = "red", "Around the Green" = "green", "Putting" = "purple"))
+  labs(title = "Relation between quality of different strokes and score", x = "Strokes Gained", y = "Score", color = "Strokes Gained") + 
+  scale_color_manual(values = c("Off the Tee" = "blue", "Approach Shots" = "red", "Around the Green" = "green", "Putting" = "purple")) + theme_minimal() + theme(plot.title = element_text(face = "bold"))
 
 ```
-
-#### Did you know that golfers only make birdies, on average, 15-25% of the time? Because of this difficulty, it is important to know what makes the most difference on the score. This project does just that, looking at many different variables and sees whether they have an effect on the score. In this project, we see that good putting on Par 3s and Par 4s seem to make the most difference on the score.
+</div>
+#### Have you ever watched golf and wondered, "Sure, many things affect the score, but what affects it the most?" I sure have wondered that. So I created this project to answer that question. It takes data from datagolf.com, where all data is golf related, and analyzes what has the most effect on the score. In this project, we see that good putting on Par 3s and Par 4s seem to make the most difference on the score.

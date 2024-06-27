@@ -10,17 +10,24 @@ execute:
 library(tidyverse)
 golf_data <- read_csv("dg_new_course_table.csv")
 ```
+<div class="plot-container">
 
 ```{r}
+#| fig.width: 8
+#| fig.height: 5
 golf_data |> ggplot(aes(x = adj_driving_distance, y = adj_score_to_par)) + geom_point() +
-  geom_smooth(method = "loess", se = FALSE) + labs(x = "Driving Distance", y = "Score")
+  geom_smooth(method = "loess", se = FALSE) + labs(x = "Driving Distance", y = "Score") + theme_minimal()
 ```
-
+</div>
 #### There is not much of a correlation, which seems suprising, but makes sense when we look at the relation between accuracy and distance.
+<div class="plot-container">
 
 ```{r}
-golf_data |> ggplot(aes(x = adj_driving_distance, y = adj_driving_accuracy)) + geom_point() +
-  geom_smooth(method = "loess", se = FALSE) + labs(x = "Driving Distance", y = "Driving Accuracy")
-```
+#| fig.width: 8
+#| fig.height: 5
 
+golf_data |> ggplot(aes(x = adj_driving_distance, y = adj_driving_accuracy)) + geom_point() +
+  geom_smooth(method = "loess", se = FALSE) + labs(x = "Driving Distance", y = "Driving Accuracy") + theme_minimal() 
+```
+</div>
 #### We see that the accuracy goes down when the driving distance increases, which is why driving distance is not a huge factor towards the

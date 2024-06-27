@@ -25,7 +25,7 @@
     "href": "index.html",
     "title": "What affects golf score the most?",
     "section": "",
-    "text": "What affects golf score the most?\n\nBy Zephan Shivam\n\n\n\n\n\n\n\n\n\n\n\n\nDid you know that golfers only make birdies, on average, 15-25% of the time? Because of this difficulty, it is important to know what makes the most difference on the score. This project does just that, looking at many different variables and sees whether they have an effect on the score. In this project, we see that good putting on Par 3s and Par 4s seem to make the most difference on the score."
+    "text": "What affects golf score the most?\n\nBy Zephan Shivam\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHave you ever watched golf and wondered, “Sure, many things affect the score, but what affects it the most?” I sure have wondered that. So I created this project to answer that question. It takes data from datagolf.com, where all data is golf related, and analyzes what has the most effect on the score. In this project, we see that good putting on Par 3s and Par 4s seem to make the most difference on the score."
   },
   {
     "objectID": "temp.html",
@@ -33,5 +33,33 @@
     "title": "temp",
     "section": "",
     "text": "golf_data |&gt; ggplot(mapping = aes(x = ott_sg, y = adj_score_to_par)) + geom_point() + geom_smooth(method = “lm”, se = FALSE) + labs(title = “Relation between shots off the tee (drives) and score”, x= “Strokes gained off the tee (Driving)”, y = “Score”) + theme(plot.title = element_text(face = “bold”)) golf_data |&gt; ggplot(mapping = aes(x = app_sg, y = adj_score_to_par)) + geom_point() + geom_smooth(method = “lm”, se = FALSE) + labs(title = “Relation between approach shots and score”, x = “Strokes gained on the approach shot”, y = “Score”) +\ntheme(plot.title = element_text(face = “bold”)) golf_data |&gt; ggplot(mapping = aes(x = arg_sg, y = adj_score_to_par)) + geom_point() + geom_smooth(method = “lm”, se = FALSE) + labs(title = “Relation between shots around the green and score”, x = “Strokes gained around the green (short game)”, y = “Score”) + theme(plot.title = element_text(face = “bold”)) golf_data |&gt; ggplot(mapping = aes(x = putt_sg, y = adj_score_to_par)) + geom_point() + geom_smooth(method = “lm”, se = FALSE) + labs(title = “Relation between putting and score”, x = “Strokes Gained Putting”, y = “Score”) + theme(plot.title = element_text(face = “bold”))"
+  },
+  {
+    "objectID": "plot3.html",
+    "href": "plot3.html",
+    "title": "What affects golf score the most?",
+    "section": "",
+    "text": "&lt;/div?"
+  },
+  {
+    "objectID": "plot3.html#yardage-of-course-versus-score",
+    "href": "plot3.html#yardage-of-course-versus-score",
+    "title": "What affects golf score the most?",
+    "section": "",
+    "text": "&lt;/div?"
+  },
+  {
+    "objectID": "Plot6.html",
+    "href": "Plot6.html",
+    "title": "What affects golf score the most?",
+    "section": "",
+    "text": "Warning in geom_bar(binwidth = 20): Ignoring unknown parameters: `binwidth`"
+  },
+  {
+    "objectID": "Plot6.html#difficulty-of-each-type-of-hole-versus-score",
+    "href": "Plot6.html#difficulty-of-each-type-of-hole-versus-score",
+    "title": "What affects golf score the most?",
+    "section": "",
+    "text": "Warning in geom_bar(binwidth = 20): Ignoring unknown parameters: `binwidth`"
   }
 ]

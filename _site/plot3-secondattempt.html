@@ -150,23 +150,27 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="relation-between-driving-distance-and-score" class="level2">
 <h2 class="anchored" data-anchor-id="relation-between-driving-distance-and-score">Relation between driving distance and score</h2>
+<div class="plot-container">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plot3-secondattempt_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plot3-secondattempt_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
+</div>
 </div>
 </div>
 </div>
 <section id="there-is-not-much-of-a-correlation-which-seems-suprising-but-makes-sense-when-we-look-at-the-relation-between-accuracy-and-distance." class="level4">
 <h4 class="anchored" data-anchor-id="there-is-not-much-of-a-correlation-which-seems-suprising-but-makes-sense-when-we-look-at-the-relation-between-accuracy-and-distance.">There is not much of a correlation, which seems suprising, but makes sense when we look at the relation between accuracy and distance.</h4>
+<div class="plot-container">
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="plot3-secondattempt_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="plot3-secondattempt_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
+</div>
 </div>
 </div>
 </div>
@@ -260,7 +264,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/zshi\.quarto\.pub\/what-affects-the-golf-score-the-most");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

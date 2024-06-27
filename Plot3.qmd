@@ -14,8 +14,13 @@ library(tidyverse)
 #Reading the data
 golf_data <- read_csv(file = "dg_new_course_table.csv")
 ```
+<div class="plot-container">
 
 ```{r}
+#| fig.width: 8
+#| fig.height: 5
 #Plotting the data
- golf_data |> ggplot(mapping = aes(x = yardage, y = adj_score_to_par)) + geom_point(alpha = 0.8) + geom_smooth(method = "loess", se = FALSE, color = "green") + labs(subtitle = "Only after the yardage crosses 7100 does it have an effect on the score.", x = "Yardage", y = "Average score to Par", caption = "Data from datagolf.com") + theme(plot.title = element_text(face = "bold")) 
+golf_data |> ggplot(mapping = aes(x = yardage, y = adj_score_to_par)) + geom_point(alpha = 0.8) + geom_smooth(method = "loess", se = FALSE, color = "green") + labs(subtitle = "Only after the yardage crosses 7100 does it have an effect on the score.", x = "Yardage", y = "Average score to Par", caption = "Data from datagolf.com") + theme_minimal() + theme(plot.subtitle = element_text(face = "bold")) 
+
 ```
+</div>
